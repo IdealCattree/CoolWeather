@@ -42,9 +42,9 @@ public class AutoUpdateService extends Service {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.S) {
-            pi = PendingIntent.getService(this, 1, i, PendingIntent.FLAG_IMMUTABLE);
+            pi = PendingIntent.getService(this, 1, i, PendingIntent.FLAG_MUTABLE);
         } else {
-            pi = PendingIntent.getService(this, 1, i, PendingIntent.FLAG_ONE_SHOT);
+            pi = PendingIntent.getService(this, 1, i, PendingIntent.FLAG_IMMUTABLE);
         }
         alarmManager.cancel(pi);
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtTime, pi);
