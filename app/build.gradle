@@ -16,6 +16,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    productFlavors {
+        qihoo {
+            applicationId "com.coolweather.android.qihoo"
+        }
+        baidu {
+            applicationId "com.coolweather.android.baidu"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
